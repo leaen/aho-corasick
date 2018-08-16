@@ -33,21 +33,6 @@ class TestAhoCorasick(unittest.TestCase):
 
         self.assertEqual(actual, expected)
 
-    def test_simple_sequential(self):
-        corpus = 'abc'
-        keywords = ['a', 'ab', 'abc']
-        expected = {
-            'a'  : 1,
-            'ab' : 1,
-            'abc': 1,
-        }
-
-        ac = AhoCorasick(keywords)
-        ac.build()
-        actual = ac.search(corpus)
-
-        self.assertEqual(actual, expected)
-
     def test_simple_all_substrings(self):
         corpus = 'abc'
         keywords = ['a', 'b', 'c', 'ab', 'bc', 'abc']
