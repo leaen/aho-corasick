@@ -26,7 +26,7 @@ class AhoCorasick:
                 # Otherwise we need to create a new node
                 else:
                     self.goto[cur_node][letter] = self.num_nodes
-                    self.goto.append({})
+                    self.goto.append(defaultdict(int))
                     self.output.append(set())
                     cur_node = self.num_nodes
                     self.num_nodes += 1
